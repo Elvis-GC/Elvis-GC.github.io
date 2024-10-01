@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9821036c.css",
+    "main.js": "/static/js/main.0a028f59.js",
+    "static/js/787.9b4628fc.chunk.js": "/static/js/787.9b4628fc.chunk.js",
+    "static/media/mountain4.jpg": "/static/media/mountain4.6bd7ebb64da829d001f5.jpg",
+    "static/media/travel.jpg": "/static/media/travel.803bbc4b9361cef7e7cb.jpg",
+    "static/media/service.jpg": "/static/media/service.cf9e9aa578b6f248e629.jpg",
+    "static/media/luna.jpg": "/static/media/luna.ba022259304cf3060da8.jpg",
+    "static/media/contact.jpg": "/static/media/contact.55840ae48918c7f21573.jpg",
+    "static/media/mountain2.jpg": "/static/media/mountain2.bfcccb2ae490845d3501.jpg",
+    "static/media/mountain1.jpg": "/static/media/mountain1.7f80ee79122c4d2e87a9.jpg",
+    "static/media/muela.jpg": "/static/media/muela.b341b7f4db0084b3c4ef.jpg",
+    "static/media/mountain3.jpg": "/static/media/mountain3.1bed8e9f1a8cce686758.jpg",
+    "static/media/uyuni.jpg": "/static/media/uyuni.433be0bb16768a902aad.jpg",
+    "index.html": "/index.html",
+    "main.9821036c.css.map": "/static/css/main.9821036c.css.map",
+    "main.0a028f59.js.map": "/static/js/main.0a028f59.js.map",
+    "787.9b4628fc.chunk.js.map": "/static/js/787.9b4628fc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9821036c.css",
+    "static/js/main.0a028f59.js"
+  ]
+}
