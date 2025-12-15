@@ -35,12 +35,18 @@ body {
     gap: 25px;
 }
 
-.btn a {
-    text-decoration: none;
-    color: #111;
-    background: #fff;
-    padding: 10px 25px;
-    border-radius: 8px;
-    box-shadow: 0.5rem 1rem 3rem hsl(0, 0, 0,0.3);
+ .btn a {
+        padding: 10px 20px;
+        text-decoration: none;
+        color: white; /* Texto blanco */
+        border-radius: 5px; /* Bordes redondeados */
+        margin: 5px; /* Espaciado entre botones */
+    }
 
-}
+    .btn a:first-child {
+        background-color: green; /* Bot\UffffffffSI" color verde */
+    }
+
+    .btn a:last-child {
+        background-color: red; /* Bot\UffffffffNO" color rojo */
+    }
