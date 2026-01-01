@@ -195,3 +195,40 @@ function bounce()
 	
 	timeout = setTimeout(bounce, interval);
 }
+// Función para obtener el tiempo del servidor y iniciar el contador
+fetch('http://worldtimeapi.org/api/timezone/Etc/UTC')
+  .then(response => response.json())
+  .then(data => {
+    // Obtener la hora actual del servidor
+    let now = new Date(data.utc_datetime).getTime();
+    startCountdown(now);
+  });
+
+function startCountdown(now) {
+    // Fecha de cuenta regresiva
+    let countdownDate = new Date("Jan 1, 2026 00:00:00").getTime();
+
+    let x = setInterval(function() {
+      // Calcular la distancia
+      let distance = countdownDate - now;
+
+      // Calcular días, horas, minutos y segundos
+      let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Actualizar el elemento con el contenedor del contador
+      document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+
+      // Incrementar 'now' cada segundo
+      now += 1000;
+
+      // Comprobar si la cuenta regresiva ha terminado
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "¡Feliz Año Nuevo 2026!";
+      }
+    }, 1000);
+}
