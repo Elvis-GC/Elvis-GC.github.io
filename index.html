@@ -3,608 +3,702 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soberanía Tecnológica Bolivia · Pilares + ISO 27001</title>
-    <!-- Font Awesome -->
+    <title>Modelo Boliviano de Soberanía Tecnológica</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background: #eef2f7;
-            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            background: #0b0e14;
+            color: #e5e9f0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            min-height: 100vh;
             padding: 2rem 1rem;
+            min-height: 100vh;
         }
 
-        .presentation-card {
-            max-width: 1300px;
+        .presentation-container {
+            max-width: 1280px;
             width: 100%;
-            background: #ffffff;
-            border-radius: 2.5rem;
-            box-shadow: 0 30px 60px -15px rgba(0, 20, 40, 0.3);
-            overflow: hidden;
-        }
-
-        /* cabecera */
-        .header-friendly {
-            background: linear-gradient(135deg, #0f2a44 0%, #1b4a6b 100%);
-            padding: 2rem 2.5rem 1.8rem 2.5rem;
-            color: white;
-            border-bottom: 6px solid #f7c948;
-        }
-
-        .header-friendly .top-tag {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 0.8rem;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #b8d4e8;
+            gap: 2.5rem;
+        }
+
+        .slide {
+            background: linear-gradient(145deg, #141a24, #1e2633);
+            border-radius: 2.5rem;
+            padding: 2.5rem 3rem;
+            width: 100%;
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.03);
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            animation: fadeSlide 0.6s ease-out;
+        }
+
+        @keyframes fadeSlide {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #f0f4ff, #9bb8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 0.5rem;
         }
 
-        .header-friendly .top-tag i {
-            color: #f7c948;
-        }
-
-        .header-friendly h1 {
-            font-size: 2.6rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-            line-height: 1.2;
-        }
-
-        .header-friendly h1 span {
-            color: #f7c948;
-            font-weight: 300;
-        }
-
-        .header-friendly .sub {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 0.7rem;
-            color: #c5dcee;
-            font-size: 1.05rem;
-        }
-
-        .header-friendly .sub i {
-            margin-right: 6px;
-            color: #f7c948;
-        }
-
-        .header-friendly .sub .pill {
-            background: rgba(247, 201, 72, 0.18);
-            padding: 0.3rem 1.4rem;
-            border-radius: 60px;
-            border: 1px solid #f7c94860;
-            font-weight: 500;
-            color: #f7c948;
-            font-size: 0.9rem;
-        }
-
-        .content {
-            padding: 2.5rem 2.5rem 1.8rem 2.5rem;
-            background: #fafcff;
-        }
-
-        /* caja "en simple" */
-        .simple-box {
-            background: #e3edf6;
-            border-radius: 28px;
-            padding: 1.8rem 2rem;
-            margin-bottom: 2.2rem;
-            border-left: 8px solid #0f2a44;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-        }
-
-        .simple-box p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: #0a1e30;
-        }
-
-        .simple-box p i {
-            color: #f7c948;
-            margin-right: 12px;
-            font-size: 1.6rem;
-            vertical-align: middle;
-        }
-
-        .simple-box strong {
-            color: #0f2a44;
-        }
-
-        /* TRES PILARES (como antes) */
-        .pillars-section {
-            margin: 2.5rem 0 2rem 0;
-        }
-
-        .pillars-section h2 {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #0b1a2f;
-            margin-bottom: 1.5rem;
-        }
-
-        .pillars-section h2 i {
-            color: #f7c948;
-            font-size: 2rem;
-        }
-
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.8rem;
-        }
-
-        .pillar {
-            background: white;
-            padding: 1.8rem 1.5rem;
-            border-radius: 28px;
-            box-shadow: 0 8px 18px -6px rgba(0, 20, 40, 0.06);
-            border: 1px solid #e2ebf3;
-            transition: 0.2s;
-        }
-
-        .pillar:hover {
-            border-color: #f7c948;
-            box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.08);
-        }
-
-        .pillar .icon {
-            background: #0f2a44;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .pillar h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #0b1a2f;
-            margin-bottom: 0.7rem;
-        }
-
-        .pillar p {
-            color: #1e3b52;
-            line-height: 1.6;
-            font-size: 0.98rem;
-        }
-
-        .pillar p i {
-            color: #f7c948;
-            margin-right: 6px;
-        }
-
-        /* comparativa países */
-        .comparative-section {
-            margin: 2.5rem 0 2rem 0;
-        }
-
-        .comparative-section h2 {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #0b1a2f;
-            margin-bottom: 1.5rem;
-        }
-
-        .comparative-section h2 i {
-            color: #f7c948;
-            font-size: 2rem;
-        }
-
-        .country-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.8rem;
-        }
-
-        .country-card {
-            background: white;
-            border-radius: 24px;
-            padding: 1.8rem 1.5rem 1.5rem 1.5rem;
-            box-shadow: 0 8px 18px -8px rgba(0, 20, 40, 0.06);
-            border: 1px solid #e2ebf3;
-            transition: 0.2s;
-        }
-
-        .country-card:hover {
-            border-color: #f7c948;
-        }
-
-        .country-card .flag-icon {
+        h2 {
             font-size: 2.2rem;
-            margin-bottom: 0.6rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #d6e2ff;
+            border-left: 5px solid #3b82f6;
+            padding-left: 1.2rem;
+            margin-bottom: 1.8rem;
         }
 
-        .country-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #0b1a2f;
-            margin-bottom: 0.6rem;
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #b6cdff;
+            margin-bottom: 1rem;
         }
 
-        .country-card .solution-tag {
-            background: #0f2a44;
-            color: white;
-            padding: 0.2rem 1rem;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .subhead {
+            color: #8da4d0;
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        .badge {
+            background: #1f2a3f;
+            padding: 0.25rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #a5c0ff;
             display: inline-block;
+            border: 1px solid #2d3b55;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.2rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.2rem;
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(2px);
+            border-radius: 1.8rem;
+            padding: 1.8rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: 0.2s;
+            box-shadow: 0 10px 18px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: #3b82f6;
+            transform: translateY(-4px);
+        }
+
+        .card i {
+            font-size: 2.2rem;
+            color: #3b82f6;
             margin-bottom: 0.8rem;
         }
 
-        .country-card p {
-            color: #1e3b52;
-            line-height: 1.6;
-            font-size: 0.98rem;
-        }
-
-        .country-card p i {
-            color: #f7c948;
-            margin-right: 6px;
-        }
-
-        /* Bolivia solución */
-        .bolivia-solution {
-            background: #f4f8fe;
-            border-radius: 28px;
-            padding: 1.8rem 2rem;
-            margin-top: 2.5rem;
-            border: 1px solid #d6e3ef;
-        }
-
-        .bolivia-solution h3 {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1.4rem;
+        .card-title {
             font-weight: 600;
-            color: #0b1a2f;
-            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
+            color: #eef4ff;
+            margin-bottom: 0.4rem;
         }
 
-        .bolivia-solution h3 i {
-            color: #f7c948;
-        }
-
-        .solution-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .step {
-            background: white;
-            padding: 1.2rem 1.2rem;
-            border-radius: 20px;
-            border-left: 4px solid #0f2a44;
-        }
-
-        .step .step-num {
-            font-weight: 700;
-            color: #f7c948;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.3rem;
-        }
-
-        .step p {
-            color: #1e3b52;
+        .card-text {
+            color: #b0c5ec;
             font-size: 0.95rem;
             line-height: 1.5;
         }
 
-        /* NUEVA SECCIÓN: ISO 27001 (abajo) */
-        .iso-section {
-            margin-top: 2.8rem;
-            background: #f4f8fe;
-            border-radius: 28px;
-            padding: 1.8rem 2rem;
-            border: 1px solid #d6e3ef;
-        }
-
-        .iso-section h2 {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #0b1a2f;
-            margin-bottom: 1.5rem;
-        }
-
-        .iso-section h2 i {
-            color: #f7c948;
-            font-size: 2rem;
-        }
-
-        .iso-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .iso-item {
-            background: white;
-            padding: 1.2rem 1.2rem;
-            border-radius: 18px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-            border-left: 4px solid #0f2a44;
-        }
-
-        .iso-item .iso-num {
-            font-weight: 700;
-            color: #0f2a44;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            margin-bottom: 0.3rem;
-        }
-
-        .iso-item p {
-            color: #1e3b52;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .iso-item i {
-            color: #f7c948;
-            margin-right: 6px;
-        }
-
-        /* footer */
-        .footer-friendly {
-            margin-top: 2.5rem;
-            padding-top: 1.5rem;
-            border-top: 2px dashed #c7d8e8;
+        .list-normativa {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-            color: #1f3c57;
+            gap: 0.7rem 1.8rem;
+            margin-top: 0.8rem;
         }
 
-        .footer-friendly .auditor-info {
+        .list-normativa li {
+            list-style: none;
+            background: #1b2433;
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            border: 1px solid #2b3852;
+            color: #c4d6ff;
+        }
+
+        .svg-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .diagram-box {
+            background: #0f151f;
+            border-radius: 2rem;
+            padding: 1.8rem;
+            border: 1px solid #28344a;
+            width: 100%;
+        }
+
+        .pillar-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem 1.5rem;
+            margin: 0.8rem 0;
+        }
+
+        .pillar-item {
+            background: #192233;
+            padding: 0.5rem 1.8rem;
+            border-radius: 60px;
+            border: 1px solid #314160;
+            font-weight: 500;
+            color: #c9dcff;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin: 2rem 0 0.5rem;
+        }
+
+        .timeline-item {
+            flex: 1;
+            min-width: 100px;
+            text-align: center;
+            position: relative;
+        }
+
+        .timeline-item .year {
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: #3b82f6;
+            background: #131d2b;
+            display: inline-block;
+            padding: 0.2rem 1.2rem;
+            border-radius: 60px;
+            border: 1px solid #2e405e;
+        }
+
+        .timeline-item p {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #b3c8f0;
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: #3b82f6;
+            margin-right: 0.5rem;
+        }
+
+        hr {
+            border: 0.5px solid #28344a;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box {
+            background: #0f1a2b;
+            border-radius: 1.5rem;
+            padding: 1.5rem 2rem;
+            border-left: 6px solid #3b82f6;
+            margin: 1rem 0;
+        }
+
+        .highlight-box.warning {
+            border-left-color: #ef4444;
+            background: #1f0f1a;
+        }
+
+        .highlight-box.success {
+            border-left-color: #22c55e;
+            background: #0f1a1a;
+        }
+
+        .flex-center {
             display: flex;
             align-items: center;
-            gap: 14px;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
-        .footer-friendly .auditor-info i {
-            font-size: 2rem;
-            color: #0f2a44;
-            background: #dee9f2;
-            padding: 10px;
-            border-radius: 60px;
+        .text-glow {
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
         }
 
-        .footer-friendly .badge-final {
-            background: #0f2a44;
-            color: white;
-            padding: 0.3rem 1.6rem;
-            border-radius: 60px;
-            font-weight: 500;
+        .small-note {
+            color: #7b93c0;
             font-size: 0.9rem;
         }
 
-        .footer-friendly .badge-final i {
-            margin-right: 8px;
+        .footer-slide {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #5a6f95;
+            font-size: 0.8rem;
         }
 
-        @media (max-width: 700px) {
-            .header-friendly h1 {
-                font-size: 1.9rem;
-            }
-            .content {
-                padding: 1.5rem;
-            }
-            .simple-box p {
-                font-size: 1rem;
-            }
+        .definition-box {
+            background: linear-gradient(135deg, #0f1a2b, #162033);
+            border-radius: 2rem;
+            padding: 2rem;
+            border: 2px solid #3b82f6;
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.08);
         }
+
+        .definition-box .highlight {
+            color: #9bb8ff;
+            font-weight: 500;
+        }
+
+        .concept-map {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .concept-map .row {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .concept-map .node {
+            background: #1a253b;
+            padding: 0.8rem 1.8rem;
+            border-radius: 60px;
+            border: 1px solid #2d405e;
+            color: #c9dcff;
+            font-weight: 500;
+        }
+
+        .concept-map .node.central {
+            background: #1a2a4a;
+            border-color: #3b82f6;
+            font-size: 1.2rem;
+            padding: 1rem 2.5rem;
+        }
+
+        .concept-map .connector {
+            color: #3b82f6;
+            font-size: 1.5rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .comparison-table th {
+            background: #1a253b;
+            padding: 0.8rem;
+            text-align: left;
+            color: #b6cdff;
+            border-bottom: 2px solid #2d405e;
+        }
+
+        .comparison-table td {
+            padding: 0.8rem;
+            border-bottom: 1px solid #1f293b;
+            color: #c4d6ff;
+        }
+
+        .comparison-table tr:hover td {
+            background: #141d2b;
+        }
+
+        @media (max-width: 800px) {
+            .slide { padding: 1.8rem 1.5rem; }
+            h1 { font-size: 2.4rem; }
+            h2 { font-size: 1.8rem; }
+            .grid-2, .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr; }
+            .timeline { flex-direction: column; gap: 1.2rem; }
+        }
+
+        @media (max-width: 480px) {
+            .slide { padding: 1.2rem; border-radius: 1.8rem; }
+        }
+
+        ul.lined {
+            list-style: none;
+            margin-top: 0.8rem;
+        }
+        ul.lined li {
+            padding: 0.4rem 0;
+            border-bottom: 1px solid #1f293b;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        ul.lined li i {
+            color: #3b82f6;
+            width: 1.4rem;
+        }
+
+        .icon-large {
+            font-size: 3.5rem;
+            color: #3b82f6;
+        }
+
+        .text-center { text-align: center; }
+        .mt-1 { margin-top: 1rem; }
+        .mt-2 { margin-top: 2rem; }
+        .mb-1 { margin-bottom: 1rem; }
+        .gap-1 { gap: 1rem; }
     </style>
 </head>
 <body>
-<div class="presentation-card">
+    <div class="presentation-container">
 
-    <!-- cabecera -->
-    <div class="header-friendly">
-        <div class="top-tag">
-            <i class="fas fa-shield-alt"></i> Soberanía Tecnológica · Visión para Bolivia
-            <span style="margin-left: auto; background: #1f4b6b; padding: 0.1rem 1.2rem; border-radius: 30px; font-size: 0.75rem;">
-                <i class="fas fa-users"></i> Para todas las personas
-            </span>
-        </div>
-        <h1>¿Qué significa <span>soberanía tecnológica</span>?</h1>
-        <div class="sub">
-            <span><i class="fas fa-globe-americas"></i> Control de nuestros datos · Leyes bolivianas · Sin depender del exterior</span>
-            <span class="pill"><i class="fas fa-key"></i> Datos críticos · Cifrado propio</span>
-        </div>
-    </div>
-
-    <div class="content">
-
-        <!-- explicación simple -->
-        <div class="simple-box">
-            <p>
-                <i class="fas fa-lightbulb"></i> 
-                <strong>En pocas palabras:</strong> soberanía tecnológica significa que Bolivia puede decidir <strong>dónde, cómo y quién</strong> guarda y maneja su información más importante. No se trata de prohibir la nube, sino de poner <strong>reglas claras</strong>: contratos con ley boliviana, representante local y llaves de cifrado en manos del Estado. Así, aunque usemos tecnología de afuera, <strong>el control es nuestro</strong>.
-            </p>
-        </div>
-
-        <!-- ===== TRES PILARES (como en la versión anterior) ===== -->
-        <div class="pillars-section">
-            <h2><i class="fas fa-columns"></i> Los 3 pilares de la soberanía tecnológica</h2>
-            <div class="pillars-grid">
-                <div class="pillar">
-                    <div class="icon"><i class="fas fa-gavel"></i></div>
-                    <h3>Marco legal &amp; DS 1793</h3>
-                    <p><i class="fas fa-check-circle"></i> Contratos con sujeción expresa a la ley boliviana.<br>
-                    <i class="fas fa-check-circle"></i> Jurisdicción y tribunales: Bolivia.<br>
-                    <i class="fas fa-check-circle"></i> Agente o representante legal residente con facultades plenas.</p>
-                </div>
-                <div class="pillar">
-                    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                    <h3>Nube condicionada</h3>
-                    <p><i class="fas fa-check-circle"></i> Proveedores globales permitidos <strong>si</strong> cumplen normativa local.<br>
-                    <i class="fas fa-check-circle"></i> Cláusula expresa de no cesión a gobiernos extranjeros.<br>
-                    <i class="fas fa-check-circle"></i> Respaldo local y disponibilidad de datos.</p>
-                </div>
-                <div class="pillar">
-                    <div class="icon"><i class="fas fa-database"></i></div>
-                    <h3>Datos críticos &amp; cifrado</h3>
-                    <p><i class="fas fa-check-circle"></i> Prioridad: almacenamiento en territorio nacional.<br>
-                    <i class="fas fa-check-circle"></i> Gestión estatal de llaves de cifrado.<br>
-                    <i class="fas fa-check-circle"></i> Independencia operativa ante contingencias o bloqueos.</p>
-                </div>
+        <!-- SLIDE 1: PORTADA -->
+        <div class="slide">
+            <div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 1rem 0;">
+                <span class="badge" style="margin-bottom: 1.2rem;">AGETIC</span>
+                <h1 style="font-size: 3.8rem; line-height: 1.2;">Modelo Boliviano de<br>Soberanía Tecnológica</h1>
+                <h2 style="border: none; font-size: 1.8rem; color: #b6cdff; padding-left: 0;">para la Transformación Digital del Estado</h2>
+                
             </div>
         </div>
 
-        <!-- ===== COMPARATIVA LATINOAMERICANA ===== -->
-        <div class="comparative-section">
-            <h2><i class="fas fa-map-marked-alt"></i> ¿Cómo lo resolvieron otros países de Latinoamérica?</h2>
-            <div class="country-grid">
-                <div class="country-card">
-                    <div class="flag-icon">🇧🇷</div>
-                    <h3>Brasil</h3>
-                    <span class="solution-tag"><i class="fas fa-check-circle"></i> Ley LGPD + Nube híbrida</span>
-                    <p><i class="fas fa-check-circle"></i> Exigen que datos de ciudadanos se almacenen en servidores locales o con réplica en Brasil.<br>
-                    <i class="fas fa-check-circle"></i> Proveedores globales (AWS, Azure) tienen centros de datos en el país.</p>
-                </div>
-                <div class="country-card">
-                    <div class="flag-icon">🇨🇱</div>
-                    <h3>Chile</h3>
-                    <span class="solution-tag"><i class="fas fa-check-circle"></i> Datos sensibles on-premise</span>
-                    <p><i class="fas fa-check-circle"></i> Estrategia de "nube soberana": datos críticos en infraestructura estatal.<br>
-                    <i class="fas fa-check-circle"></i> Alianza con proveedores que cumplen estándares locales y ofrecen cifrado gestionado por el Estado.</p>
-                </div>
-                <div class="country-card">
-                    <div class="flag-icon">🇲🇽</div>
-                    <h3>México</h3>
-                    <span class="solution-tag"><i class="fas fa-check-circle"></i> Marco legal + representantes</span>
-                    <p><i class="fas fa-check-circle"></i> Exigen que proveedores extranjeros tengan domicilio legal en México.<br>
-                    <i class="fas fa-check-circle"></i> Contratos con cláusulas de no transferencia de datos a gobiernos extranjeros sin autorización.</p>
-                </div>
-                <div class="country-card">
-                    <div class="flag-icon">🇺🇾</div>
-                    <h3>Uruguay</h3>
-                    <span class="solution-tag"><i class="fas fa-check-circle"></i> Agencia de Gobierno Electrónico</span>
-                    <p><i class="fas fa-check-circle"></i> Centralizan la gestión de datos en una entidad estatal.<br>
-                    <i class="fas fa-check-circle"></i> Usan nube pública con condiciones muy estrictas, pero mantienen respaldos locales.</p>
-                </div>
+        <!-- SLIDE 2: DEFINICIÓN CENTRAL -->
+        <div class="slide">
+            <h2><i class="fas fa-bullseye" style="margin-right: 1rem;"></i>Concepto de Soberanía Tecnológica</h2>
+            <div class="definition-box">
+                <p style="font-size: 1.3rem; line-height: 1.8; color: #d6e2ff;">
+                    <i class="fas fa-quote-left" style="color: #3b82f6; opacity: 0.5;"></i>
+                    Capacidad del <span class="highlight">Estado</span> y de la <span class="highlight">sociedad</span> para ejercer <span class="highlight">control</span>, 
+                    <span class="highlight">autonomía</span> e <span class="highlight">independencia</span> sobre sus infraestructuras digitales, 
+                    plataformas, datos, espacio y ciberespacio, mediante la <span class="highlight">gobernanza</span>, 
+                    <span class="highlight">protección</span> y <span class="highlight">control</span> de los activos digitales y la información 
+                    conforme al <span class="highlight">ordenamiento jurídico nacional</span> 
+                    <span style="color: #fbbf24;">independientemente de la ubicación física de la infraestructura tecnológica</span>.
+                    <i class="fas fa-quote-right" style="color: #3b82f6; opacity: 0.5;"></i>
+                </p>
+            </div>
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin-top: 1.5rem;">
+                <span class="badge" style="font-size: 0.9rem;"><i class="fas fa-check-circle" style="color:#22c55e;"></i> Control jurídico</span>
+                <span class="badge" style="font-size: 0.9rem;"><i class="fas fa-check-circle" style="color:#22c55e;"></i> Independencia tecnológica</span>
+                <span class="badge" style="font-size: 0.9rem;"><i class="fas fa-check-circle" style="color:#22c55e;"></i> Ubicación física no determinante</span>
             </div>
         </div>
 
-        <!-- ===== BOLIVIA: DESAFÍO Y SOLUCIONES ===== -->
-        <div class="bolivia-solution">
-            <h3><i class="fas fa-bolt"></i> Bolivia: desafío y soluciones ante la falta de infraestructura local</h3>
-            <p style="margin-bottom: 1.2rem; color: #1e3b52; font-size: 1.05rem;">
-                <i class="fas fa-exclamation-triangle" style="color: #f7c948;"></i> 
-                <strong>El problema:</strong> Bolivia aún no cuenta con centros de datos masivos para retener toda la información crítica en territorio nacional. Pero otros países ya han sorteado esto con estrategias inteligentes que podemos adaptar.
-            </p>
-            <div class="solution-steps">
-                <div class="step">
-                    <div class="step-num"><i class="fas fa-flag"></i> Paso 1</div>
-                    <p><strong>Alianzas público-privadas</strong> con proveedores globales que ya operan en la región (Ej: AWS en Brasil, Azure en Chile) para alojar datos con <strong>jurisdicción Bolivia</strong> mediante acuerdos especiales.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num"><i class="fas fa-key"></i> Paso 2</div>
-                    <p><strong>Cifrado gestionado por el Estado</strong>: aunque los datos estén físicamente en el extranjero, las llaves de cifrado las controla exclusivamente una entidad boliviana. <strong>Nadie más puede acceder</strong>.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num"><i class="fas fa-gavel"></i> Paso 3</div>
-                    <p><strong>Representante legal local</strong> en cada contrato, con facultades para responder ante la justicia boliviana y garantizar que no se entregue información a otros gobiernos.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num"><i class="fas fa-database"></i> Paso 4</div>
-                    <p><strong>Estrategia de datos híbrida</strong>: solo la información <strong>crítica</strong> (defensa, salud, identidad) se almacena en centros nacionales (aunque sean pequeños), y el resto en la nube con las condiciones anteriores.</p>
-                </div>
-            </div>
-            <div style="margin-top: 1.5rem; background: #dce8f2; padding: 0.8rem 1.5rem; border-radius: 60px; display: inline-block; font-weight: 500; color: #0f2a44;">
-                <i class="fas fa-check-circle" style="color: #0f2a44;"></i> Lección aprendida: la soberanía no depende solo de dónde están los servidores, sino de <strong>quién controla las reglas y las llaves</strong>.
+        <!-- SLIDE 3: ÍNDICE -->
+        <div class="slide">
+            <h2><i class="fas fa-list-ul" style="margin-right: 1rem;"></i>Contenido</h2>
+            <div class="grid-3">
+                <div class="card"><i class="fas fa-gavel"></i><div class="card-title">1. Normativa vigente</div><div class="card-text">Constitución, Ley 164, D.S. 1793, 2514, 3251, 5468 y lineamientos.</div></div>
+                <div class="card"><i class="fas fa-exclamation-triangle"></i><div class="card-title">2. Problema actual</div><div class="card-text">Interpretación restrictiva basada en infraestructura física.</div></div>
+                <div class="card"><i class="fas fa-lightbulb"></i><div class="card-title">3. Definición conceptual</div><div class="card-text">Soberanía como control, autonomía e independencia.</div></div>
+                <div class="card"><i class="fas fa-globe-americas"></i><div class="card-title">4. Comparación internacional</div><div class="card-text">NIS2, NIST, ISO 27001</div></div>
+                <div class="card"><i class="fas fa-pen-fancy"></i><div class="card-title">5. Propuesta normativa</div><div class="card-text">Modificación D.S. 5468 y nuevo Modelo Nacional de Servicios en Nube.</div></div>
+                <div class="card"><i class="fas fa-project-diagram"></i><div class="card-title">6. Modelo de soberanía</div><div class="card-text">Esquema con gobernanza, control, jurisdicción, riesgo y ciberseguridad.</div></div>
+                <div class="card"><i class="fas fa-chart-line"></i><div class="card-title">7. Beneficios</div><div class="card-text">Resiliencia, costos, disponibilidad, IA, Big Data, Gobierno Digital.</div></div>
             </div>
         </div>
 
-        <!-- ===== NUEVA SECCIÓN: ISO 27001 (abajo) ===== -->
-        <div class="iso-section">
-            <h2><i class="fas fa-clipboard-check"></i> Alineación con ISO 27001 · Controles aplicables</h2>
-            <div class="iso-grid">
-                <div class="iso-item">
-                    <div class="iso-num"><i class="fas fa-flag"></i> A.18.1.1</div>
-                    <p>Identificación de requisitos legales aplicables (DS 1793, Ley de Protección de Datos).</p>
-                </div>
-                <div class="iso-item">
-                    <div class="iso-num"><i class="fas fa-handshake"></i> A.15.1.2</div>
-                    <p>Acuerdos con proveedores: cláusulas de seguridad, jurisdicción Bolivia y representante local.</p>
-                </div>
-                <div class="iso-item">
-                    <div class="iso-num"><i class="fas fa-key"></i> A.10.1.1</div>
-                    <p>Política de control de claves criptográficas: gestión soberana por el Estado boliviano.</p>
-                </div>
-                <div class="iso-item">
-                    <div class="iso-num"><i class="fas fa-database"></i> A.8.3.1</div>
-                    <p>Gestión de medios extraíbles y almacenamiento: prioridad de centros de datos nacionales.</p>
-                </div>
-                <div class="iso-item">
-                    <div class="iso-num"><i class="fas fa-balance-scale"></i> A.18.1.4</div>
-                    <p>Privacidad y protección de información personal: sujeción a normativa boliviana.</p>
-                </div>
-                <div class="iso-item">
-                    <div class="iso-num"><i class="fas fa-sync-alt"></i> A.17.1.2</div>
-                    <p>Continuidad de operaciones: independencia frente a contingencias externas.</p>
-                </div>
-            </div>
-            <div style="margin-top: 1.2rem; font-size: 0.9rem; color: #1f3c57; background: #e7eff7; padding: 0.6rem 1.5rem; border-radius: 40px; display: inline-block;">
-                <i class="fas fa-check-circle" style="color: #0f2a44;"></i> Estos controles garantizan que la estrategia de soberanía tecnológica cumpla con estándares internacionales de seguridad.
-            </div>
-        </div>
-
-        <!-- footer -->
-        <div class="footer-friendly">
-            <div class="auditor-info">
-                <i class="fas fa-user-check"></i>
+        <!-- SLIDE 4: ANÁLISIS NORMATIVO VIGENTE -->
+        <div class="slide">
+            <h2><i class="fas fa-book" style="margin-right: 1rem;"></i>1. Análisis de la normativa vigente</h2>
+            <div class="grid-2">
                 <div>
-                    <strong style="font-size: 1.05rem;">Auditoría ISO 27001 · Ciberseguridad</strong><br>
-                    <span style="font-size: 0.9rem; color: #2a4c6a;"><i class="fas fa-lightbulb"></i> Enfoque práctico y comparativo</span>
+                    <h3>Base legal</h3>
+                    <ul class="list-normativa" style="display: block;">
+                        <li style="display: block; background: none; padding: 0.3rem 0; border-radius: 0; border: none; font-size: 1rem;"><i class="fas fa-check-circle" style="color:#3b82f6;"></i> Constitución Política del Estado</li>
+                        <li style="display: block; background: none; padding: 0.3rem 0; border-radius: 0; border: none; font-size: 1rem;"><i class="fas fa-check-circle" style="color:#3b82f6;"></i> Ley N.º 164 (Ley General de Telecomunicaciones, TIC)</li>
+                        <li style="display: block; background: none; padding: 0.3rem 0; border-radius: 0; border: none; font-size: 1rem;"><i class="fas fa-check-circle" style="color:#3b82f6;"></i> D.S. N.º 1793 · D.S. N.º 2514 · D.S. N.º 3251</li>
+                        <li style="display: block; background: none; padding: 0.3rem 0; border-radius: 0; border: none; font-size: 1rem;"><i class="fas fa-check-circle" style="color:#3b82f6;"></i> <strong>D.S. N.º 5468 (2025)</strong></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Lineamientos y estrategias</h3>
+                    <ul class="list-normativa" style="display: block;">
+                        <li style="display: block; background: none; padding: 0.3rem 0; border-radius: 0; border: none; font-size: 1rem;"><i class="fas fa-check-circle" style="color:#3b82f6;"></i> Lineamientos de Gobierno Electrónico</li>
+                        <li style="display: block; background: none; padding: 0.3rem 0; border-radius: 0; border: none; font-size: 1rem;"><i class="fas fa-check-circle" style="color:#3b82f6;"></i> Lineamientos del PISI</li>
+                        <li style="display: block; background: none; padding: 0.3rem 0; border-radius: 0; border: none; font-size: 1rem;"><i class="fas fa-check-circle" style="color:#3b82f6;"></i> Relación con la Estrategia Nacional de Ciberseguridad</li>
+                    </ul>
                 </div>
             </div>
-            <div class="badge-final">
-                <i class="fas fa-check-circle"></i> DS 1793 · Soberanía posible
+            <div class="highlight-box" style="margin-top: 1rem;">
+                <i class="fas fa-file-alt" style="color: #3b82f6;"></i> Marco normativo vigente que requiere actualización para habilitar modelos de nube alineados con el concepto de soberanía.
             </div>
         </div>
 
-        <div style="margin-top: 1rem; font-size: 0.8rem; color: #4b6f8c; text-align: right; border-top: 1px solid #dfeaf3; padding-top: 0.8rem;">
-            <i class="fas fa-globe-americas"></i> Referencias: Brasil (LGPD), Chile (Nube Soberana), México (Ley Fintech), Uruguay (AGESIC) · Adaptación para Bolivia
+        <!-- SLIDE 5: PROBLEMA ACTUAL -->
+        <div class="slide">
+            <h2><i class="fas fa-times-circle" style="color:#ef4444; margin-right: 1rem;"></i>2. Problema actual</h2>
+            <div class="grid-2">
+                <div>
+                    <h3>Interpretación restrictiva</h3>
+                    <ul class="lined">
+                        <li><i class="fas fa-hard-hat"></i> Infraestructura física como único determinante</li>
+                        <li><i class="fas fa-server"></i> Centros de datos nacionales obligatorios</li>
+                        <li><i class="fas fa-ban"></i> Restricción del uso de nube pública</li>
+                    </ul>
+                    <div class="highlight-box warning" style="margin-top: 1rem;">
+                        <i class="fas fa-exclamation-circle" style="color:#ef4444;"></i> Esta visión <strong>no garantiza</strong> soberanía y genera efectos adversos.
+                    </div>
+                </div>
+                <div>
+                    <h3>Consecuencias</h3>
+                    <ul class="lined">
+                        <li><i class="fas fa-dollar-sign" style="color:#f59e0b;"></i> Incremento de costos</li>
+                        <li><i class="fas fa-battery-quarter" style="color:#f59e0b;"></i> Reduce la resiliencia</li>
+                        <li><i class="fas fa-lightbulb" style="color:#f59e0b;"></i> Limita la innovación</li>
+                        <li><i class="fas fa-digital-tiling" style="color:#f59e0b;"></i> Dificulta la transformación digital</li>
+                        <li><i class="fas fa-shield-alt" style="color:#f59e0b;"></i> No garantiza soberanía por sí sola</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
+        <!-- SLIDE 6: DESARROLLO DEL CONCEPTO -->
+        <div class="slide">
+            <h2><i class="fas fa-rocket" style="margin-right: 1rem;"></i>3. Desarrollo del concepto</h2>
+            <div class="definition-box" style="border-color: #f59e0b;">
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #d6e2ff;">
+                    <i class="fas fa-quote-left" style="color: #f59e0b; opacity: 0.5;"></i>
+                    La Soberanía Tecnológica se fundamenta en la <span style="color: #fbbf24;">capacidad del Estado</span> para ejercer 
+                    <span style="color: #fbbf24;">control efectivo</span> sobre sus activos digitales, garantizando 
+                    <span style="color: #fbbf24;">autonomía</span> e <span style="color: #fbbf24;">independencia</span> 
+                    en la toma de decisiones tecnológicas, con pleno respeto al 
+                    <span style="color: #fbbf24;">ordenamiento jurídico nacional</span>.
+                    <i class="fas fa-quote-right" style="color: #f59e0b; opacity: 0.5;"></i>
+                </p>
+            </div>
+            <div class="concept-map mt-2">
+                <div class="row">
+                    <span class="node central"><i class="fas fa-flag"></i> Soberanía Tecnológica</span>
+                </div>
+                <div class="connector"><i class="fas fa-arrow-down"></i></div>
+                <div class="row">
+                    <span class="node"><i class="fas fa-gavel"></i> Control jurídico</span>
+                    <span class="node"><i class="fas fa-sliders-h"></i> Control operativo</span>
+                    <span class="node"><i class="fas fa-microchip"></i> Control técnico</span>
+                </div>
+                <div class="connector"><i class="fas fa-arrow-down"></i></div>
+                <div class="row">
+                    <span class="node"><i class="fas fa-database"></i> Activos digitales</span>
+                    <span class="node"><i class="fas fa-shield-alt"></i> Protección</span>
+                    <span class="node"><i class="fas fa-balance-scale"></i> Gobernanza</span>
+                </div>
+                <div style="color: #7b93c0; margin-top: 0.5rem;">
+                    <i class="fas fa-arrow-right"></i> Independientemente de la ubicación física
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: PILARES DE LA SOBERANÍA -->
+        <div class="slide">
+            <h2><i class="fas fa-puzzle-piece" style="margin-right: 1rem;"></i>Pilares de la Soberanía Tecnológica</h2>
+            <div class="grid-5">
+                <div class="card"><i class="fas fa-flag"></i><div class="card-title">Gobernanza</div><div class="card-text">Políticas, roles y toma de decisiones estratégicas para el control de activos digitales.</div></div>
+                <div class="card"><i class="fas fa-sliders-h"></i><div class="card-title">Control</div><div class="card-text">Gestión de acceso, identidad y operaciones sobre plataformas y datos.</div></div>
+                <div class="card"><i class="fas fa-gavel"></i><div class="card-title">Jurisdicción</div><div class="card-text">Marco legal aplicable y protección de datos conforme al ordenamiento nacional.</div></div>
+                <div class="card"><i class="fas fa-shield-alt"></i><div class="card-title">Gestión del riesgo</div><div class="card-text">Análisis, mitigación y continuidad operativa.</div></div>
+                <div class="card"><i class="fas fa-lock"></i><div class="card-title">Ciberseguridad</div><div class="card-text">Protección integral de infraestructuras, plataformas y datos.</div></div>
+            </div>
+            <div style="text-align: center; margin-top: 1.2rem; background: #0e1622; padding: 0.8rem; border-radius: 3rem;">
+                <i class="fas fa-arrow-right"></i> Estos pilares garantizan la soberanía <strong>independientemente</strong> del modelo de infraestructura.
+            </div>
+        </div>
+
+        <!-- SLIDE 8: COMPARACIÓN INTERNACIONAL -->
+        <div class="slide">
+            <h2><i class="fas fa-globe" style="margin-right: 1rem;"></i>4. Comparación internacional</h2>
+            <p class="subhead">Los estándares globales priorizan el control y la gobernanza sobre la ubicación física.</p>
+            <div class="grid-4">
+                <div class="card"><i class="fas fa-euro-sign"></i><div class="card-title">Unión Europea</div><div class="card-text">NIS2, Data Act, GAIA-X</div></div>
+                <div class="card"><i class="fas fa-university"></i><div class="card-title">NIST</div><div class="card-text">Framework de ciberseguridad</div></div>
+                <div class="card"><i class="fas fa-certificate"></i><div class="card-title">ISO 27001</div><div class="card-text">SGSI</div></div>
+                <div class="card"><i class="fas fa-cloud-upload-alt"></i><div class="card-title">ISO 27017/27018</div><div class="card-text">Seguridad en nube y privacidad</div></div>
+                <div class="card"><i class="fas fa-robot"></i><div class="card-title">ISO 42001</div><div class="card-text">Sistemas de IA</div></div>
+            </div>
+            <div class="highlight-box success" style="margin-top: 0.5rem;">
+                <i class="fas fa-check-circle" style="color:#22c55e;"></i> Ningún país desarrollado define la soberanía únicamente por la ubicación física de los servidores.
+            </div>
+        </div>
+
+        <!-- SLIDE 9: PROPUESTA DE MODIFICACIÓN NORMATIVA -->
+        <div class="slide">
+            <h2><i class="fas fa-edit" style="margin-right: 1rem;"></i>5. Propuesta de modificación normativa</h2>
+            <div style="background: #0f1825; padding: 1.2rem 1.8rem; border-radius: 1.8rem; border: 1px solid #2b3c57;">
+                <p><strong>D.S. N.º 5468</strong> — Agregar nuevo apartado:</p>
+                <div style="background: #1a253b; padding: 1rem; border-radius: 1rem; margin: 0.8rem 0;">
+                    <i class="fas fa-folder-open"></i> <strong>Modelo Nacional de Servicios en la Nube para el Estado Plurinacional</strong>
+                </div>
+                <p><strong>Nuevo principio:</strong></p>
+                <div style="background: #0f1a2b; padding: 1rem; border-radius: 1rem; border-left: 6px solid #3b82f6;">
+                    <i class="fas fa-quote-left" style="color:#3b82f6;"></i> 
+                    La soberanía tecnológica será garantizada mediante el <strong>control jurídico, operativo y técnico</strong> de los activos digitales, 
+                    <span style="color: #fbbf24;">independientemente del modelo de infraestructura utilizado</span>.
+                </div>
+            </div>
+            <p class="small-note" style="margin-top: 1rem;">Afecta también lineamientos de Gobierno Electrónico y PISI.</p>
+        </div>
+
+        <!-- SLIDE 10: MODELO DE SOBERANÍA (ESQUEMA) -->
+        <div class="slide">
+            <h2><i class="fas fa-sitemap" style="margin-right: 1rem;"></i>6. Modelo de Soberanía Tecnológica</h2>
+            <div class="diagram-box">
+                <div style="text-align: center; font-weight: 600; font-size: 1.8rem; color: #b6cdff; margin-bottom: 1rem;">
+                    <i class="fas fa-flag"></i> SOBERANÍA TECNOLÓGICA
+                </div>
+                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin: 1rem 0;">
+                    <div style="background: #1a253b; padding: 0.5rem 1.8rem; border-radius: 60px; border: 1px solid #3b82f6;">
+                        <i class="fas fa-flag" style="color:#3b82f6;"></i> Gobernanza
+                    </div>
+                    <div style="background: #1a253b; padding: 0.5rem 1.8rem; border-radius: 60px; border: 1px solid #3b82f6;">
+                        <i class="fas fa-sliders-h" style="color:#3b82f6;"></i> Control
+                    </div>
+                    <div style="background: #1a253b; padding: 0.5rem 1.8rem; border-radius: 60px; border: 1px solid #3b82f6;">
+                        <i class="fas fa-gavel" style="color:#3b82f6;"></i> Jurisdicción
+                    </div>
+                    <div style="background: #1a253b; padding: 0.5rem 1.8rem; border-radius: 60px; border: 1px solid #f59e0b;">
+                        <i class="fas fa-shield-alt" style="color:#f59e0b;"></i> Gestión de Riesgos
+                    </div>
+                    <div style="background: #1a253b; padding: 0.5rem 1.8rem; border-radius: 60px; border: 1px solid #3b82f6;">
+                        <i class="fas fa-lock" style="color:#3b82f6;"></i> Ciberseguridad
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; background: #0b111c; padding: 0.8rem; border-radius: 3rem; margin-top: 0.8rem;">
+                    <span><i class="fas fa-server" style="color:#3b82f6;"></i> Local</span>
+                    <span><i class="fas fa-building" style="color:#3b82f6;"></i> Privada</span>
+                    <span><i class="fas fa-cloud" style="color:#3b82f6;"></i> Pública</span>
+                    <span><i class="fas fa-cloud-upload-alt" style="color:#3b82f6;"></i> Híbrida</span>
+                </div>
+                <div style="text-align: center; margin-top: 0.8rem; color: #7b93c0;">
+                    <i class="fas fa-arrow-right"></i> Infraestructura flexible · Soberanía garantizada por control y gobernanza
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: BENEFICIOS -->
+        <div class="slide">
+            <h2><i class="fas fa-star" style="margin-right: 1rem;"></i>7. Beneficios</h2>
+            <div class="grid-3">
+                <div class="card"><i class="fas fa-shield-alt"></i><div class="card-title">Mayor resiliencia</div><div class="card-text">Continuidad operativa ante contingencias con arquitecturas distribuidas.</div></div>
+                <div class="card"><i class="fas fa-coins"></i><div class="card-title">Menores costos</div><div class="card-text">Optimización de recursos TIC y modelos de pago por uso.</div></div>
+                <div class="card"><i class="fas fa-clock"></i><div class="card-title">Alta disponibilidad</div><div class="card-text">Servicios 24/7 con mínima latencia y redundancia.</div></div>
+                <div class="card"><i class="fas fa-database"></i><div class="card-title">Recuperación ante desastres</div><div class="card-text">Estrategias de backup y DRP con nube híbrida.</div></div>
+                <div class="card"><i class="fas fa-microchip"></i><div class="card-title">IA y Big Data</div><div class="card-text">Impulso a la analítica avanzada y toma de decisiones.</div></div>
+                <div class="card"><i class="fas fa-landmark"></i><div class="card-title">Gobierno Digital</div><div class="card-text">Transformación efectiva del Estado con servicios centrados en el ciudadano.</div></div>
+            </div>
+            <div class="highlight-box success" style="background: #0f1a2b; border-left-color: #22c55e;">
+                <i class="fas fa-check-circle" style="color:#22c55e;"></i> Cumplimiento normativo alineado con estándares internacionales.
+            </div>
+        </div>
+
+
+
+        
+
+        <!-- SLIDE 17: INDICADORES DE SOBERANÍA -->
+        <div class="slide">
+            <h2><i class="fas fa-chart-simple" style="margin-right: 1rem;"></i>Indicadores de soberanía tecnológica</h2>
+            <ul class="lined">
+                <li><i class="fas fa-percent"></i> % de servicios con control de acceso y gobernanza definida</li>
+                <li><i class="fas fa-clock"></i> Tiempo de recuperación ante desastres (RTO/RPO)</li>
+                <li><i class="fas fa-lock"></i> Nivel de cumplimiento de estándares (ISO 27001, NIST)</li>
+                <li><i class="fas fa-cloud"></i> Diversidad de proveedores de nube y arquitectura</li>
+                <li><i class="fas fa-gavel"></i> Nivel de alineación con el ordenamiento jurídico nacional</li>
+            </ul>
+        </div>
+
+
+        <!-- SLIDE 21: CONCLUSIONES TÉCNICAS -->
+        <div class="slide">
+            <h2><i class="fas fa-check-double"></i>Conclusiones técnicas</h2>
+            <ul class="lined">
+                <li><i class="fas fa-check-circle" style="color:#22c55e;"></i> La soberanía tecnológica es la <strong>capacidad del Estado</strong> para ejercer control, autonomía e independencia.</li>
+                <li><i class="fas fa-check-circle" style="color:#22c55e;"></i> Se fundamenta en: gobernanza, control, jurisdicción, gestión de riesgos y ciberseguridad.</li>
+                <li><i class="fas fa-check-circle" style="color:#22c55e;"></i> La <strong>ubicación física</strong> de la infraestructura <strong>no es determinante</strong> para la soberanía.</li>
+                <li><i class="fas fa-check-circle" style="color:#22c55e;"></i> Bolivia puede adoptar un modelo alineado con estándares internacionales.</li>
+            </ul>
+        </div>
+
+       
+
+        <!-- SLIDE 23: CIERRE INSTITUCIONAL -->
+        <div class="slide">
+            <div style="text-align: center;">
+                <i class="fas fa-flag" style="font-size: 4rem; color: #3b82f6; margin-bottom: 1rem;"></i>
+                <h2 style="border: none; padding-left: 0; font-size: 2.6rem;">Modelo Boliviano de Soberanía Tecnológica</h2>
+                <p style="color: #b0c5ec; font-size: 1.2rem; max-width: 700px; margin: 0 auto;">
+                    Capacidad del Estado y de la sociedad para ejercer control, autonomía e independencia sobre sus infraestructuras digitales, 
+                    conforme al ordenamiento jurídico nacional, <span style="color: #fbbf24;">independientemente de la ubicación física</span>.
+                </p>
+                <div style="margin-top: 2rem; color: #5a6f95;">
+                    <p>Documento elaborado para AGETIC · PISI · Gobierno Electrónico</p>
+                    <p style="margin-top: 0.5rem;">La Paz, Bolivia · 2026</p>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <span class="badge"><i class="fas fa-lock"></i> Confidencial</span>
+                    <span class="badge"><i class="fas fa-file-alt"></i> Versión 2.0</span>
+                    <span class="badge"><i class="fas fa-check-circle" style="color:#22c55e;"></i> Alineado con estándares internacionales</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-slide">
+            Presentación técnica · Modelo Boliviano de Soberanía Tecnológica · 23 diapositivas
+        </div>
     </div>
-</div>
 </body>
 </html>
